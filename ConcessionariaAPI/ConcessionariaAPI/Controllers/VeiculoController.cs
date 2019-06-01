@@ -78,7 +78,7 @@ namespace ConcessionariaAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(veiculo);
         }
 
         // POST: api/Veiculo

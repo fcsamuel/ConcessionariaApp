@@ -78,7 +78,7 @@ namespace ConcessionariaAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(cliente);
         }
 
         // POST: api/Cliente

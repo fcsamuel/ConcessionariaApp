@@ -35,7 +35,7 @@ namespace ConcessionariaAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info { Title = "Concessionaria_API", Version = "v1" });
-                c.IncludeXmlComments(XmlCommentsFilePath);
+                //c.IncludeXmlComments(XmlCommentsFilePath);
             });
 
             //conexão com o Banco
