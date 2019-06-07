@@ -12,6 +12,7 @@ import { ClienteListComponent } from './cadastros/cliente/cliente-list/cliente-l
 import { LocacaoListComponent } from './cadastros/locacao/locacao-list/locacao-list.component';
 import { MarcaListComponent } from './cadastros/marca/marca-list/marca-list.component';
 import { VeiculoListComponent } from './cadastros/veiculo/veiculo-list/veiculo-list.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { VeiculoListComponent } from './cadastros/veiculo/veiculo-list/veiculo-l
     ClienteListComponent,
     LocacaoListComponent,
     MarcaListComponent,
-    VeiculoListComponent
+    VeiculoListComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
