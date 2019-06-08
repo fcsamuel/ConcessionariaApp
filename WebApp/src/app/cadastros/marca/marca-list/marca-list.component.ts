@@ -32,7 +32,7 @@ export class MarcaListComponent implements OnInit {
   }
 
   callUpdate(id: number) {
-    this.router.navigate(["../marca-edit"+id]);
+    this.router.navigate(["../marca-edit/"+id]);
   }
 
   callNew() {

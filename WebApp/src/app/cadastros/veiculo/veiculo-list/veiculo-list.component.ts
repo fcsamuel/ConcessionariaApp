@@ -32,7 +32,7 @@ export class VeiculoListComponent implements OnInit {
     }
   
     callUpdate(id: number) {
-      this.router.navigate(["../veiculo-edit"+id]);
+      this.router.navigate(["../veiculo-edit/"+id]);
     }
   
     callNew() {

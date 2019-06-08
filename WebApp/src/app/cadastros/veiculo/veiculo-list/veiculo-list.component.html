@@ -49,11 +49,11 @@
           </button>
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button mat-button (click)="this.callUpdate(element.veiculoId)">
-            <mat-icon svgIcon="form-edit"></mat-icon>
+          <button mat-icon-button>
+            <mat-icon (click)="callUpdate(element.veiculoId)">edit</mat-icon>
           </button>
-          <button mat-button (click)="this.deleteConfirmation(element.veiculoId)">
-            <mat-icon svgIcon="form-trash"></mat-icon>
+          <button mat-icon-button>
+            <mat-icon (click)="this.deleteConfirmation(element.veiculoId)">delete</mat-icon>
           </button>
         </mat-cell>
       </ng-container>

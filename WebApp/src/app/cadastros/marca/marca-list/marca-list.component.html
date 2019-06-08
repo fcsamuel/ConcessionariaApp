@@ -21,15 +21,15 @@
       <ng-container matColumnDef="editColumn">
         <mat-header-cell *matHeaderCellDef>
           <button mat-icon-button>
-            <mat-icon (click)="callNew()">add_circle_outline</mat-icon>
+            <mat-icon (click)="this.callNew()">add_circle_outline</mat-icon>
           </button>
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button mat-button (click)="this.callUpdate(element.marcaId)">
-            <mat-icon svgIcon="form-edit"></mat-icon>
+          <button mat-icon-button>
+            <mat-icon (click)="this.callUpdate(element.marcaId)">edit</mat-icon>
           </button>
-          <button mat-button (click)="this.deleteConfirmation(element.marcaId)">
-            <mat-icon svgIcon="form-trash"></mat-icon>
+          <button mat-icon-button>
+            <mat-icon (click)="this.deleteConfirmation(element.marcaId)">delete</mat-icon>
           </button>
         </mat-cell>
       </ng-container>
