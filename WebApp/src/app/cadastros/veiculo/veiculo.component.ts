@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Veiculo } from './model/veiculo';
 import { VeiculoService } from './veiculo.service';
+import { Marca } from '../marca/model/marca';
+import { MarcaService } from '../marca/marca.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
@@ -11,15 +13,18 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class VeiculoComponent implements OnInit {
 
+  marcaList : Array<Marca>;
   veiculo: Veiculo;
   edit: boolean;
 
   constructor(private veiculoService: VeiculoService,
+    private marcaService: MarcaService,
     public activatedRoute: ActivatedRoute,
     public router: Router,
     public spinner: NgxSpinnerService) { }
 
   ngOnInit() {
+    this.loadMarcaList();
     this.veiculo = new Veiculo();
     this.activatedRoute.params.subscribe(
       params => {
@@ -77,6 +82,19 @@ export class VeiculoComponent implements OnInit {
 
   fill(veiculo: any) {
     this.veiculo = veiculo;
+  }
+
+  loadMarcaList() {
+    this.spinner.show();
+    this.marcaService.listAll().subscribe(sucesso => {
+      if(sucesso != null) {
+        this.marcaList = sucesso;
+        this.spinner.hide();
+      }
+    },
+    error => {
+      this.spinner.hide();
+    });
   }
 
 }

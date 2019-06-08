@@ -1,3 +1,66 @@
-<p>
-  veiculo-list works!
-</p>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+ <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+<div class="row">
+  <div class="col s12 m12 l12">
+    <mat-table #table [dataSource]="this.dataSource" matSort class="table-striped">
+      <ng-container matColumnDef="descricao">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> DESCRIÇÃO </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.descricao}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="marca">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> MARCA </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.marca}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="modelo">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> MODELO </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.modelo}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="placa">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> PLACA </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.placa}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ano">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> ANO </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.ano}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="preco">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> PREÇO </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.preco}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="valorLocacao">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> VALOR DE LOCAÇÃO </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.valorLocacao}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="cor">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> COR </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.cor}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="editColumn">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-icon-button>
+            <mat-icon (click)="callNew()">add_circle_outline</mat-icon>
+          </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-button (click)="this.callUpdate(element.veiculoId)">
+            <mat-icon svgIcon="form-edit"></mat-icon>
+          </button>
+          <button mat-button (click)="this.deleteConfirmation(element.veiculoId)">
+            <mat-icon svgIcon="form-trash"></mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="this.displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: this.displayedColumns;"></mat-row>
+    </mat-table>  
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>  
+  </div>
+</div>
