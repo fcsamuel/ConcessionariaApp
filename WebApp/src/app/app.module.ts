@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ANALYZE_FOR_ENTRY_COMPONENTS } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,12 +13,11 @@ import { LocacaoListComponent } from './cadastros/locacao/locacao-list/locacao-l
 import { MarcaListComponent } from './cadastros/marca/marca-list/marca-list.component';
 import { VeiculoListComponent } from './cadastros/veiculo/veiculo-list/veiculo-list.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 
 import { MatInputModule, MatRadioModule, MatButtonModule, MatTableModule, MatIconModule,
   MatPaginatorModule, MatSort, MatSortModule, MatExpansionModule, MatSelectModule, MatDialogModule } from '@angular/material';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner'; 
 
