@@ -8,6 +8,7 @@ import { ClienteComponent } from './cadastros/cliente/cliente.component';
 import { ClienteListComponent } from './cadastros/cliente/cliente-list/cliente-list.component';
 import { LocacaoComponent } from './cadastros/locacao/locacao.component';
 import { LocacaoListComponent } from './cadastros/locacao/locacao-list/locacao-list.component';
+import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   {path: 'marca', component: MarcaComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'cliente-edit/:id', component: ClienteComponent},
   {path: 'locacao', component: LocacaoComponent},
   {path: 'locacao-list', component: LocacaoListComponent},
-  {path: 'locacao-edit/:id', component: LocacaoComponent}
+  {path: 'locacao-edit/:id', component: LocacaoComponent},
+  {path: '**', component: PagenotfoundComponent}
 ];
 
 @NgModule({

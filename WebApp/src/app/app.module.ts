@@ -19,7 +19,8 @@ import { DatePipe } from '@angular/common';
 import { MatInputModule, MatRadioModule, MatButtonModule, MatTableModule, MatIconModule,
   MatPaginatorModule, MatSort, MatSortModule, MatExpansionModule, MatSelectModule, MatDialogModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
-import { NgxSpinnerModule } from 'ngx-spinner'; 
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component'; 
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     LocacaoListComponent,
     MarcaListComponent,
     VeiculoListComponent,
-    DialogComponent
+    DialogComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

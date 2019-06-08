@@ -16,29 +16,29 @@ export class VeiculoService extends BaseService{
   save(veiculo: any) : Observable<any>{
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.post(environment.urlWebAPI +"Veiculos/", veiculo)
+    return this.http.post(environment.urlWebAPI +"Veiculo/", veiculo)
       .catch((error: any) => Observable.throw(error.error));
   }
 
   update(veiculo: any) : Observable<any>{
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.put(environment.urlWebAPI +"Veiculos/"+veiculo.veiculoId, veiculo)
+    return this.http.put(environment.urlWebAPI +"Veiculo/"+veiculo.veiculoId, veiculo)
       .catch((error: any) => Observable.throw(error.error));
   }
 
   delete(id : number) : Observable<any> {
-    return this.http.delete(environment.urlWebAPI +"Veiculos/"+ id)
+    return this.http.delete(environment.urlWebAPI +"Veiculo/"+ id)
       .catch((error: any) => Observable.throw(error.error));
   }
 
   listAll() : Observable<any> {
-    return this.http.get(environment.urlWebAPI +"Veiculos/")
+    return this.http.get(environment.urlWebAPI +"Veiculo/")
       .catch((error: any) => Observable.throw(error.error));
   }
 
   list(id: number) : Observable<any> {
-    return this.http.get(environment.urlWebAPI +"Veiculos/"+ id)
+    return this.http.get(environment.urlWebAPI +"Veiculo/"+ id)
       .catch((error: any) => Observable.throw(error.error));
   }
 }
