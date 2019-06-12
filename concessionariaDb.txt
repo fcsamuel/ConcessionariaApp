@@ -1,0 +1,40 @@
+/*concessionariaDb*/
+
+create table marca (
+  marcaId serial primary key,
+  descricao varchar(120),
+  dt_record Date,
+  dt_update Date
+);
+create table veiculo (
+  veiculoId serial primary key,
+  modelo varchar(120),
+  descricao varchar(120),
+  placa varchar(8),
+  ano integer,
+  preco numeric(15,2),
+  valorlocacao numeric(15,2),
+  dt_record Date,
+  dt_update Date,
+  marcaId integer references marca(marcaId)
+);
+create table cliente (
+  clienteId serial primary key,
+  nome varchar(102),
+  cpf varchar(11),
+  contato varchar(13),
+  endereco varchar(120),
+  dt_record Date,
+  dt_update Date
+);
+create table locacao (
+  locacaoId serial primary key,
+  clienteId integer references cliente(clienteId),
+  veiculoId integer references veiculo(veiculoId),
+  observacao varchar(300),
+  valorlocacao numeric(15,2),
+  dt_locacao Date,
+  dt_devolucao Date,
+  dt_record Date,
+  dt_update Date
+);
