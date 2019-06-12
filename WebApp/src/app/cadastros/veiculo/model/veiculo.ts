@@ -9,5 +9,4 @@ export class Veiculo  {
     ano: number;
     preco: number;
     valorLocacao: number;
-    cor: string;
 }

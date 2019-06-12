@@ -12,7 +12,7 @@
 <div class="row">
   <div class="col s12 m4 l4">
     <mat-form-field>
-      <input matInput placeholder="ID" type="number" [(ngModel)]="veiculo.veiculoId" required>
+      <input matInput placeholder="ID" type="number" [(ngModel)]="veiculo.veiculoid" required>
     </mat-form-field>
   </div>
   <div class="col s12 m8 l8">
@@ -26,8 +26,8 @@
   <div class="col s12 m4 l4">
     <mat-form-field>
       <mat-select placeholder="Marca" name="marca" [(ngModel)]="veiculo.marca">
-        <mat-option *ngFor="let e of this.marcaList" [value]="e">
-          {{e.sigla + " - " + e.descricao}}
+        <mat-option *ngFor="let element of this.marcaList" [value]="element">
+          {{element.marcaid +" - "+ element.descricao}}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -40,31 +40,24 @@
   </div>
 </div>
 <div class="row">
-  <div class="col s12 m4 l4">
+  <div class="col s12 m3 l3">
     <mat-form-field>
       <input matInput placeholder="Placa" type="text" [(ngModel)]="veiculo.placa" required>
     </mat-form-field>
   </div>
-  <div class="col s12 m4 l4">
+  <div class="col s12 m3 l3">
     <mat-form-field>
       <input matInput placeholder="Ano" type="number" [(ngModel)]="veiculo.ano" required>
     </mat-form-field>
   </div>
-  <div class="col s12 m4 l4">
-    <mat-form-field>
-      <input matInput placeholder="Cor" type="text" [(ngModel)]="veiculo.cor" required>
-    </mat-form-field>
-  </div>
-</div>
-<div class="row">
-  <div class="col s12 m6 l6">
+  <div class="col s12 m3 l3">
     <mat-form-field>
       <input matInput placeholder="Preço" type="number" [(ngModel)]="veiculo.preco" required>
     </mat-form-field>
   </div>
-  <div class="col s12 m6 l6">
+  <div class="col s12 m3 l3">
     <mat-form-field>
-      <input matInput placeholder="Valor de Locação" type="number" [(ngModel)]="veiculo.locacao" required>
+      <input matInput placeholder="Valor de Locação" type="number" [(ngModel)]="veiculo.valorlocacao" required>
     </mat-form-field>
   </div>
 </div>

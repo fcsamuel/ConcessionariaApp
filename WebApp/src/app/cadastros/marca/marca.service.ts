@@ -23,7 +23,7 @@ export class MarcaService extends BaseService {
   update(marca: any) : Observable<any>{
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.put(environment.urlWebAPI +"Marca/"+marca.marcaId, marca)
+    return this.http.put(environment.urlWebAPI +"Marca/"+marca.marcaid, marca)
       .catch((error: any) => Observable.throw(error.error));
   }
 

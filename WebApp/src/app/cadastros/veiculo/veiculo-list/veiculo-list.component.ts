@@ -16,7 +16,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class VeiculoListComponent implements OnInit {
 
-  displayedColumns: string[] = ["descricao", "marca", "modelo", "placa", "ano", "preco", "valorLocacao", "cor", "editColumn"];
+  displayedColumns: string[] = ["descricao", "marca", "modelo", "placa", "ano", "preco", "valorLocacao", "editColumn"];
   public dataSource: any;
 
   @ViewChild(MatPaginator) paginatorCustom: MatPaginator;
@@ -67,6 +67,7 @@ export class VeiculoListComponent implements OnInit {
       this.spinner.show();
       this.veiculoService.listAll().subscribe(sucesso => {
         if(sucesso != null) {
+          console.log(sucesso);
           this.updateTable(sucesso);
           this.spinner.hide();
         }

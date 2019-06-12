@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace ConcessionariaAPI.Models
@@ -18,6 +19,7 @@ namespace ConcessionariaAPI.Models
         public DateTime? DtRecord { get; set; }
         public DateTime? DtUpdate { get; set; }
 
+        [JsonIgnore]
         public ICollection<Locacao> Locacao { get; set; }
     }
 }

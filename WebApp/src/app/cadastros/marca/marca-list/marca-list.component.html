@@ -11,7 +11,7 @@
     <mat-table #table [dataSource]="this.dataSource" matSort class="table-striped">
       <ng-container matColumnDef="marcaId">
         <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.marcaId}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.marcaid}} </mat-cell>
       </ng-container>
       <ng-container matColumnDef="descricao">
         <mat-header-cell *matHeaderCellDef mat-sort-header> DESCRIÇÃO </mat-header-cell>
@@ -26,10 +26,10 @@
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
           <button mat-icon-button>
-            <mat-icon (click)="this.callUpdate(element.marcaId)">edit</mat-icon>
+            <mat-icon (click)="this.callUpdate(element.marcaid)">edit</mat-icon>
           </button>
           <button mat-icon-button>
-            <mat-icon (click)="this.deleteConfirmation(element.marcaId)">delete</mat-icon>
+            <mat-icon (click)="this.deleteConfirmation(element.marcaid)">delete</mat-icon>
           </button>
         </mat-cell>
       </ng-container>

@@ -13,7 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class VeiculoComponent implements OnInit {
 
-  marcaList : Array<Marca>;
+  marcaList : Array<Marca> = new Array<Marca>();
   veiculo: Veiculo;
   edit: boolean;
 

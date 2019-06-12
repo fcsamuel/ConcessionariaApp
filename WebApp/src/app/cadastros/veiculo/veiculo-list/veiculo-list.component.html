@@ -35,11 +35,7 @@
       </ng-container>
       <ng-container matColumnDef="valorLocacao">
         <mat-header-cell *matHeaderCellDef mat-sort-header> VALOR DE LOCAÇÃO </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.valorLocacao}} </mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="cor">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> COR </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.cor}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.valorlocacao}} </mat-cell>
       </ng-container>
       
       <ng-container matColumnDef="editColumn">
@@ -50,10 +46,10 @@
         </mat-header-cell>
         <mat-cell *matCellDef="let element">
           <button mat-icon-button>
-            <mat-icon (click)="callUpdate(element.veiculoId)">edit</mat-icon>
+            <mat-icon (click)="callUpdate(element.veiculoid)">edit</mat-icon>
           </button>
           <button mat-icon-button>
-            <mat-icon (click)="this.deleteConfirmation(element.veiculoId)">delete</mat-icon>
+            <mat-icon (click)="this.deleteConfirmation(element.veiculoid)">delete</mat-icon>
           </button>
         </mat-cell>
       </ng-container>
