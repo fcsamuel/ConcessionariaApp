@@ -59,6 +59,7 @@ namespace ConcessionariaAPI.Controllers
             {
                 return BadRequest();
             }
+            veiculo.DtUpdate = DateTime.Now;
 
             _context.Entry(veiculo).State = EntityState.Modified;
 
@@ -89,6 +90,8 @@ namespace ConcessionariaAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
+            veiculo.DtRecord = DateTime.Now;
+            veiculo.DtUpdate = DateTime.Now;
 
             _context.Veiculo.Add(veiculo);
             await _context.SaveChangesAsync();
