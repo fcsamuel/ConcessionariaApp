@@ -37,6 +37,7 @@ export class VeiculoComponent implements OnInit {
   }
 
   save() {
+    console.log(this.veiculo);
     this.spinner.show();
     if(!this.edit) {
       this.veiculoService.save(this.veiculo).subscribe( sucesso => {

@@ -1,4 +1,4 @@
 export class Marca {
-    marcaId: number;
+    marcaid: number;
     descricao: string;
 }

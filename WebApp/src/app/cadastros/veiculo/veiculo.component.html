@@ -25,8 +25,8 @@
   <!--#region CAMPOS FORMULARIO - LISTBOX-->
   <div class="col s12 m4 l4">
     <mat-form-field>
-      <mat-select placeholder="Marca" name="marca" [(ngModel)]="veiculo.marca">
-        <mat-option *ngFor="let element of this.marcaList" [value]="element">
+      <mat-select placeholder="Marca" name="marca" [(ngModel)]="veiculo.marcaid">
+        <mat-option *ngFor="let element of this.marcaList" [value]="element.marcaid">
           {{element.marcaid +" - "+ element.descricao}}
         </mat-option>
       </mat-select>

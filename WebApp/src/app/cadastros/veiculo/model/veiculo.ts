@@ -1,7 +1,7 @@
 import { Marca } from "../../marca/model/marca";
 
 export class Veiculo  {
-    veiculoId: number;
+    veiculoid: number;
     descricao: number;
     marca: Marca;
     placa: string;

@@ -67,7 +67,6 @@ export class VeiculoListComponent implements OnInit {
       this.spinner.show();
       this.veiculoService.listAll().subscribe(sucesso => {
         if(sucesso != null) {
-          console.log(sucesso);
           this.updateTable(sucesso);
           this.spinner.hide();
         }
