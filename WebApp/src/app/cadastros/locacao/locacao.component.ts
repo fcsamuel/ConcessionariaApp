@@ -76,7 +76,6 @@ export class LocacaoComponent implements OnInit {
     this.locacaoService.list(id).subscribe(sucesso => {
       if (sucesso != null) {
         this.fill(sucesso);
-
       }
     },
     error => {

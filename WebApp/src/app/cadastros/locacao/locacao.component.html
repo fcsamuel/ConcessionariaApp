@@ -14,7 +14,7 @@
   </div>
   <div class="col s12 m5 l5">
     <mat-form-field>
-      <mat-select placeholder="Cliente" name="cliente" [(ngModel)]="clienteid">
+      <mat-select placeholder="Cliente" name="cliente" [(ngModel)]="locacao.clienteid">
         <mat-option *ngFor="let element of this.clienteList" [value]="element.clienteid">
           {{element.clienteid + " - " + element.nome}}
         </mat-option>
@@ -23,7 +23,7 @@
   </div>
   <div class="col s12 m5 l5">
     <mat-form-field>
-      <mat-select placeholder="Veículo" name="veiculo" [(ngModel)]="veiculoid">
+      <mat-select placeholder="Veículo" name="veiculo" [(ngModel)]="locacao.veiculoid">
         <mat-option *ngFor="let element of this.veiculoList" [value]="element.veiculoid">
           {{element.veiculoid + " - " + element.descricao}}
         </mat-option>

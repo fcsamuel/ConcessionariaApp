@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Locacao } from '../model/locacao';
 import { DialogComponent } from '../../../shared/dialog/dialog.component';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-locacao-list',
@@ -23,6 +24,7 @@ export class LocacaoListComponent implements OnInit {
   constructor(private locacaoService: LocacaoService,
     public router: Router,
     private dialog: MatDialog,
+    private datePipe: DatePipe,
     public spinner: NgxSpinnerService) { }
 
   ngOnInit() {
