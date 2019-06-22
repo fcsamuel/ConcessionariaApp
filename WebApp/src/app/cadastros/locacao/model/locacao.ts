@@ -1,10 +1,12 @@
 import { Cliente } from "../../cliente/model/cliente";
+import { Veiculo } from "../../veiculo/model/veiculo";
 
 export class Locacao  {
-    locacaoId: number;
+    locacaoid: number;
     cliente: Cliente;
+    veiculo: Veiculo;
     observacao: string;
-    valorLocacao: string;
-    locacao: Date;
-    devolucao: Date;
+    valorlocacao: string;
+    dtLocacao: Date;
+    dtDevolucao: Date;
 }

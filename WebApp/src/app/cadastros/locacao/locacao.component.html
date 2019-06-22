@@ -1,3 +1,69 @@
-<p>
-  locacao works!
-</p>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+ <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+<div class="row">
+  <div class="col s12 m2 l2">
+    <mat-form-field>
+      <input matInput placeholder="Id" type="number" [(ngModel)]="locacao.locacaoid" required>
+    </mat-form-field>
+  </div>
+  <div class="col s12 m5 l5">
+    <mat-form-field>
+      <mat-select placeholder="Cliente" name="cliente" [(ngModel)]="clienteid">
+        <mat-option *ngFor="let element of this.clienteList" [value]="element.clienteid">
+          {{element.clienteid + " - " + element.nome}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field> 
+  </div>
+  <div class="col s12 m5 l5">
+    <mat-form-field>
+      <mat-select placeholder="Veículo" name="veiculo" [(ngModel)]="veiculoid">
+        <mat-option *ngFor="let element of this.veiculoList" [value]="element.veiculoid">
+          {{element.veiculoid + " - " + element.descricao}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m4 l4">
+    <mat-form-field>
+      <input matInput placeholder="Valor da Locação (R$)" type="number" [(ngModel)]="locacao.valorlocacao">
+    </mat-form-field>
+  </div>
+  <div class="col s12 m4 l4">
+    <mat-form-field>
+      <input matInput placeholder="Data de Locação" type="date" [(ngModel)]="locacao.dtLocacao" required>
+    </mat-form-field>
+  </div>
+  <div class="col s12 m4 l4">
+      <mat-form-field>
+        <input matInput placeholder="Data de Devolução" type="date" [(ngModel)]="locacao.dtDevolucao" required>
+      </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m12 l12">
+    <mat-form-field>
+      <input matInput placeholder="Observação" type="text" [(ngModel)]="locacao.observacao">
+    </mat-form-field>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col s12 m12 l12">
+    <div class="row footer-btn">
+      <div class="button-row col s12"> 
+        <button mat-raised-button color="blue" (click)="this.save()" >Salvar</button>
+        <button mat-raised-button color="green" (click)="this.backward()" >Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>

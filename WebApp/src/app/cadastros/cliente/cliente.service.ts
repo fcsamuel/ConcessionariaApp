@@ -23,7 +23,7 @@ export class ClienteService extends BaseService {
   update(cliente: any) : Observable<any>{
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.put(environment.urlWebAPI +"Cliente/"+cliente.clienteId, cliente)
+    return this.http.put(environment.urlWebAPI +"Cliente/"+cliente.clienteid, cliente)
       .catch((error: any) => Observable.throw(error.error));
   }
 

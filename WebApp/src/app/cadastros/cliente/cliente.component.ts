@@ -22,7 +22,6 @@ export class ClienteComponent implements OnInit {
 
 
   ngOnInit() {
-    this.loadClienteList();
     this.cliente = new Cliente();
     this.activatedRoute.params.subscribe(
       params => {
@@ -53,8 +52,9 @@ export class ClienteComponent implements OnInit {
   }
   
   update() {
+    console.log(this.cliente);
     this.clienteService.update(this.cliente).subscribe( sucesso => {
-      if(sucesso != null) {
+      if(sucesso != null) {        
         this.spinner.hide();
         this.backward();
       }
@@ -71,6 +71,7 @@ export class ClienteComponent implements OnInit {
   getById(id: number) {
     this.clienteService.list(id).subscribe(sucesso => {
       if(sucesso != null) {
+        console.log(sucesso);
         this.fill(sucesso);
       }
     },
@@ -80,20 +81,7 @@ export class ClienteComponent implements OnInit {
   }
 
   fill(cliente: any) {
-    this.cliente = this.cliente;
-  }
-
-  loadClienteList() {
-    this.spinner.show();
-    this.clienteService.listAll().subscribe(sucesso => {
-      if(sucesso != null) {
-        this.clienteList = sucesso;
-        this.spinner.hide();
-      }
-    },
-    error => {
-      this.spinner.hide();
-    });
+    this.cliente = cliente;
   }
 
 }

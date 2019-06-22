@@ -1,3 +1,60 @@
-<p>
-  locacao-list works!
-</p>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+ <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+<div class="row">
+  <div class="col s12 m12 l12">
+    <mat-table #table [dataSource]="this.dataSource" matSort class="table-striped">
+
+      <ng-container matColumnDef="cliente">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Cliente </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.clienteid}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="veiculo">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Veículo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.veiculoid}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="valorlocacao">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Valor (R$) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.valorlocacao}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="dtLocacao">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Data Locação </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.dtLocacao}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="dtDevolucao">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Data Devolução </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.dtDevolucao}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="observacao">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Data Locação </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.observacao}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="editColumn">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-icon-button>
+            <mat-icon (click)="callNew()">add_circle_outline</mat-icon>
+          </button>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button>
+            <mat-icon (click)="callUpdate(element.locacaoid)">edit</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon (click)="this.deleteConfirmation(element.locacaoid)">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="this.displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: this.displayedColumns;"></mat-row>
+
+    </mat-table>
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
